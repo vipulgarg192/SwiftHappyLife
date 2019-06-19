@@ -29,5 +29,5 @@ class Users {
         self.userTpe = UserType.Buyer
         self.productsList = Dictionary()
     }
-    
 }
+
