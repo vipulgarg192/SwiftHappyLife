@@ -8,3 +8,12 @@
 
 import Foundation
 
+class Buyer: Users {
+    
+    var accountEmail : String
+    
+    override init() {
+        self.accountEmail = String()
+    }
+}
+
