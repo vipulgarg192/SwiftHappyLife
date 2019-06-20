@@ -16,7 +16,7 @@ class Users {
     var gender : Gender
     var email : String
     var password : String
-    var userTpe : UserType
+    var userType : UserType
     var productsList : Dictionary<Int, Products>
     
     init() {
@@ -26,7 +26,7 @@ class Users {
         self.gender = Gender.Other
         self.email = String()
         self.password = String()
-        self.userTpe = UserType.Buyer
+        self.userType = UserType.Buyer
         self.productsList = Dictionary()
     }
 }
