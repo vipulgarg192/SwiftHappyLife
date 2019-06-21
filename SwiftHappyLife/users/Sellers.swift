@@ -19,6 +19,12 @@ class Bank {
         self.bankName = String()
         self.accountNo = String()
     }
+    
+    init() {
+        self.organisationID = String()
+        self.bankName = String()
+        self.accountNo = String()
+    }
 }
 
 class Seller: Users {
