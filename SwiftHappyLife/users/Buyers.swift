@@ -8,12 +8,19 @@
 
 import Foundation
 
-class Buyer: Users {
+class Buyer: Users  {
+   
+    var bankAccountEmail : String
+
+    init(id: Int , firstName : String , lastName : String , gender : Gender ,
+         email : String , password : String , userType : UserType , productList : Dictionary<Int , Products> , bankAccountEmail : String) {
+        self.bankAccountEmail = bankAccountEmail
+        super.init(id: id, firstName:firstName , lastName:lastName ,gender: gender , email:email,
+                   password:password , userType:userType , productList : Dictionary())
+    }
     
-    var accountEmail : String
-    
-    override init() {
-        self.accountEmail = String()
+    override func Display() {
+        print("\tBankDetails: \(bankAccountEmail)\n")
     }
 }
 

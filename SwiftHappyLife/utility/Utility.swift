@@ -27,3 +27,24 @@ extension String{
         return emailTest.evaluate(with: self)
     }
 }
+    
+    extension String{
+        func  isEmpty() -> Bool {
+            if self.count==0{
+                return false
+            }
+            else{
+                return true
+            }
+        }
+}
+
+extension String{
+    func sizeCheck() -> Bool{
+        if self.count < 6 {
+            print("Size of password must be equal or greater than 6")
+            return false
+        }
+        return true
+    }
+}

@@ -31,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9BB5C59722BC071300D7B8CF /* userlist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userlist.json; sourceTree = "<group>"; };
 		9BF7936622BAE95A00623F94 /* SwiftHappyLife */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftHappyLife; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF7936922BAE95A00623F94 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9BF7937522BAEA6400623F94 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 				9BF7937322BAEA3D00623F94 /* utility */,
 				9BF7937422BAEA4600623F94 /* protocols */,
 				9BF7936922BAE95A00623F94 /* main.swift */,
+				9BB5C59722BC071300D7B8CF /* userlist.json */,
 			);
 			path = SwiftHappyLife;
 			sourceTree = "<group>";

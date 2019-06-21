@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Users {
-    
-    var id : String
+class Users : IDisplay{
+
+    var id : Int
     var firstName : String
     var lastName : String
     var gender : Gender
@@ -19,8 +19,12 @@ class Users {
     var userType : UserType
     var productsList : Dictionary<Int, Products>
     
-    init() {
-        self.id = String()
+    var fullName : String{
+        return "\(firstName ) \(lastName)"
+    }
+    
+    init(id: Int , firstName : String , lastName : String , gender : Gender , email : String , password : String , userType : UserType , productList : Dictionary<Int ,String>) {
+        self.id = Int()
         self.firstName = String()
         self.lastName = String()
         self.gender = Gender.Other
@@ -29,5 +33,16 @@ class Users {
         self.userType = UserType.Buyer
         self.productsList = Dictionary()
     }
+    
+    
+    func Display() {
+        print("\tId: \(id)\n")
+        print("\tFullName: \(fullName)\n")
+        print("\tGender: \(gender)\n")
+        print("\tEmailId: \(email)\n")
+        print("\tPassword: \(password)\n")
+        print("\tUserType: \(userType)")
+    }
+    
 }
 

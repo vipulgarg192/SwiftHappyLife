@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Products {
+class Products : IDisplay{
     
     var  productsId  : String
     var  productsName : String
@@ -22,4 +22,12 @@ class Products {
         self.productsType = ProductType.Others
         self.isSold = Bool()
     }
+    
+    func Display() {
+        print("\t ProductID: \(productsId)\n")
+        print("\t ProductName: \(productsName)\n")
+        print("\t ProductType: \(productsType)\n")
+        print("\t IsSold: \(isSold)\n")
+    }
+    
 }
