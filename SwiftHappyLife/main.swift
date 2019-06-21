@@ -153,5 +153,47 @@ print("Welcome To HappyLifes")
 
 var  bankDetails = Bank(organisationId: "bank1010" , bankName: "CIBC" , accountNo: "AC1234")
 
+var  bankDetails1 = Bank(organisationId: "bank1010" , bankName: "CIBC" , accountNo: "AC1234")
+
+var  bankDetails2 = Bank(organisationId: "bank1011" , bankName: "CIBC" , accountNo: "AC1235")
+
+var  bankDetails3 = Bank(organisationId: "bank1012" , bankName: "Scotia" , accountNo: "AC1266")
+
+var  bankDetails4 = Bank(organisationId: "bank1013" , bankName: "Scotia" , accountNo: "AC12677")
 
 
+
+
+
+var address1 = try Address(houseNo: "c142", streetName: "Queen St", city: "Brampton", country: "Canada", postalCode: "1410101")
+
+var address2 = try Address(houseNo: "D7809", streetName: "King St", city: "Toronto", country: "Canada", postalCode: "343434")
+
+var address3 = try Address(houseNo: "L979", streetName: "Ace St", city: "Toronto", country: "Canada", postalCode: "3445656")
+
+var address4 = try Address(houseNo: "G393", streetName: "Main St", city: "Monteral", country: "Canada", postalCode: "678909")
+
+
+//
+//var seller1 = Seller(id: 111, firstName: "Vipul", lastName: "Garg", gender: Gender.Male, email: "Vipul@gmail.com", password: "123456", userType: UserType.Seller, productList: Dictionary<Int, String>, address: address1, bank: bankDetails1)
+
+
+//
+//var seller2 = Seller(id: 111, firstName: "Vipul", lastName: "Garg", gender: Gender.Male, email: "Vipul@gmail.com", password: "123456", userType: UserType.Seller, productList: Dictionary<Int, String>(), address: address2, bank: bankDetails2)
+//
+//
+//
+//
+//
+//var seller3 = Seller(id: 111, firstName: "Vipul", lastName: "Garg", gender: Gender.Male, email: "Vipul@gmail.com", password: "123456", userType: UserType.Seller, productList: Dictionary<Int, String>()
+//    
+//    , address: address3, bank: bankDetails4)
+//
+//
+//
+//var seller4 = Seller(id: 111, firstName: "Vipul", lastName: "Garg", gender: Gender.Male, email: "Vipul@gmail.com", password: "123456", userType: UserType.Seller, productList: Dictionary<Int, String>,
+//                     
+//                     address: address4, bank: bankDetails4)
+//
+//
+//
