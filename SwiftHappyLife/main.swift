@@ -151,7 +151,7 @@ print("Welcome To HappyLifes")
 //readJsonFileArray(jsonFileName: "userlist")
 
 
-var  bankDetails = Bank("bank1010" , "CIBC" , "AC1234")
+var  bankDetails = Bank(organisationId: "bank1010" , bankName: "CIBC" , accountNo: "AC1234")
 
 
 
