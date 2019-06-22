@@ -1,14 +1,18 @@
-class Bank {
+class Bank : IDisplay{
     
     
     
-    var organisationID : String
+    private var organisationID : String
     
-    var bankName : String
+    private var bankName : String
     
-    var accountNo : String
+    private var accountNo : String
     
-    
+    var getOrganisationID : String{
+        get {
+            return organisationID
+        }
+    }
     
     init(organisationId : String , bankName : String , accountNo : String) {
         
@@ -18,6 +22,10 @@ class Bank {
         
         self.accountNo = String()
         
+    }
+    
+    func Display() {
+        print(getOrganisationID)
     }
     
     
