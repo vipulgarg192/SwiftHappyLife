@@ -10,24 +10,44 @@ import Foundation
 
 class Products : IDisplay{
     
+    
+    
     var  productsId  : String
+    
     var  productsName : String
+    
     var  productsType : ProductType
-    var  isSold : Bool
     
     
-    init() {
+    
+    
+    
+    
+    
+    init(productID : String , productName : String , productType : ProductType ) {
+        
         self.productsId = String()
+        
         self.productsName = String()
-        self.productsType = ProductType.Others
-        self.isSold = Bool()
+        
+        self.productsType = productType
+        
+        
+        
     }
+    
+    
     
     func Display() {
+        
         print("\t ProductID: \(productsId)\n")
+        
         print("\t ProductName: \(productsName)\n")
+        
         print("\t ProductType: \(productsType)\n")
-        print("\t IsSold: \(isSold)\n")
+        
     }
+    
+    
     
 }
