@@ -129,12 +129,17 @@ func signInFunction(){
             exitFunction()
         }
         if emailInput?.isEmpty == false {
-            
             let isValidEmail = emailInput?.isVAlidEmail()
             if isValidEmail == true{
-                Users.findUser(email: emailInput!)
-                print("you enter valid email \(String(describing: emailInput!))")
-                passwordFunction()
+                let user = Users.findUser(email: emailInput!)
+                if user.email != "" {
+                    print("you enter valid email \(String(describing: emailInput!))")
+                    passwordFunction()
+                }else{
+                    print("User Doesnot Exist try with other email id")
+                    signInFunction()
+                }
+
             }else{
                 print("you enter invalid email \(String(describing: emailInput))")
                 print("Please Enter Email Again")

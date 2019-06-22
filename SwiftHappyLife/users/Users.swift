@@ -31,8 +31,7 @@ class Users : IDisplay{
         return "\(firstName ) \(lastName)"
         
     }
-    
-    
+
     
     init(id: Int , firstName : String , lastName : String , gender : Gender , email : String , password : String , userType : UserType , arrayProducts : [Products]) {
         
@@ -54,6 +53,25 @@ class Users : IDisplay{
         
     }
     
+    init() {
+        
+        self.id = 0
+        
+        self.firstName = ""
+        
+        self.lastName = ""
+        
+        self.gender = Gender.Other
+        
+        self.email = ""
+        
+        self.password = ""
+        
+        self.userType = UserType.Buyer
+        
+        self.arrayProducts = []
+        
+    }
     
     
     
@@ -87,16 +105,20 @@ class Users : IDisplay{
     
     static func addUsers(user: Users)
     {
-        print(user.id)
         dictOrders.updateValue(user, forKey: user.id)
     }
     
-    static func findUser(email : String){
-        for item in dictOrders {
-            print(item)
-        }
+    static func findUser(email : String) -> Users{
+        var user = Users()
         
+        for item in dictOrders {
+            if item.value.email.lowercased() == email.lowercased(){
+                user = item.value
+            }
+        }
+        return user
     }
+    
     
     
 }
