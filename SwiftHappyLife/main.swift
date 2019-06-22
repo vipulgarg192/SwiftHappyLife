@@ -164,7 +164,7 @@ var  bankDetails4 = Bank(organisationId: "bank1013" , bankName: "Scotia" , accou
 
 
 
-var address1 = try Address(houseNo: "c142", streetName: "Queen St", city: "Brampton", country: "Canada", postalCode: "141")
+var address1 = try Address(houseNo: "c142", streetName: "Queen St", city: "Brampton", country: "Canada", postalCode: "1466661")
 
 var address2 = try Address(houseNo: "D7809", streetName: "King St", city: "Toronto", country: "Canada", postalCode: "343434")
 
@@ -216,7 +216,7 @@ var seller4 = Seller(id: 444, firstName: "Naina", lastName: "Khan", gender: Gend
 
 Users.addUsers(user : seller4)
 
-var buyer1 = Buyer(id: 555, firstName: "Kishore", lastName: "Narang", gender: Gender.Male, email: "Kishore@gmail.com", password: "123", userType: UserType.Buyer, productList: [product1], bankAccountEmail: "cibc123@gmail.com")
+var buyer1 = Buyer(id: 555, firstName: "Kishore", lastName: "Narang", gender: Gender.Male, email: "Kishore@gmail.com", password: "1237778", userType: UserType.Buyer, productList: [product1], bankAccountEmail: "cibc123@gmail.com")
 
 Users.addUsers(user : buyer1)
 
