@@ -36,17 +36,17 @@ class Users : IDisplay{
     
     init(id: Int , firstName : String , lastName : String , gender : Gender , email : String , password : String , userType : UserType , arrayProducts : [Products]) {
         
-        self.id = Int()
+        self.id = id
         
-        self.firstName = String()
+        self.firstName = firstName
         
-        self.lastName = String()
+        self.lastName = lastName
         
-        self.gender = Gender.Other
+        self.gender = gender
         
-        self.email = String()
+        self.email = email
         
-        self.password = String()
+        self.password = password
         
         self.userType = UserType.Buyer
         
@@ -79,18 +79,22 @@ class Users : IDisplay{
     static func addOrder(products: Products)
         
     {
-        
         dictProducts.updateValue(products, forKey: products.productsId)
-        
     }
     
     
-    private static var dictOrders=[Int:Users]()
+    static var dictOrders = [Int : Users]()
     
     static func addUsers(user: Users)
-
     {
+        print(user.id)
         dictOrders.updateValue(user, forKey: user.id)
+    }
+    
+    static func findUser(email : String){
+        for item in dictOrders {
+            print(item)
+        }
         
     }
     
