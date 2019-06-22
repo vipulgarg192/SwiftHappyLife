@@ -11,75 +11,43 @@ import Foundation
 print("Welcome To HappyLifes")
 
     var  bankDetails1 = Bank(organisationId: "bank1010" , bankName: "CIBC" , accountNo: "AC1234")
-    
     var  bankDetails2 = Bank(organisationId: "bank1011" , bankName: "CIBC" , accountNo: "AC1235")
-    
     var  bankDetails3 = Bank(organisationId: "bank1012" , bankName: "Scotia" , accountNo: "AC1266")
-    
     var  bankDetails4 = Bank(organisationId: "bank1013" , bankName: "Scotia" , accountNo: "AC12677")
-    
-    
-    
-    
-    
+
     var address1 = try Address(houseNo: "c142", streetName: "Queen St", city: "Brampton", country: "Canada", postalCode: "1466661")
-    
     var address2 = try Address(houseNo: "D7809", streetName: "King St", city: "Toronto", country: "Canada", postalCode: "343434")
-    
     var address3 = try Address(houseNo: "L979", streetName: "Ace St", city: "Toronto", country: "Canada", postalCode: "3445656")
-    
     var address4 = try Address(houseNo: "G393", streetName: "Main St", city: "Monteral", country: "Canada", postalCode: "678909")
-    
-    
+
     var product1 =  Products(productID: "pro1", productName: "Cap",productType: ProductType.Clothes )
-    
     var product2 =  Products(productID: "pro2", productName: "Shirt",productType: ProductType.Clothes )
-    
     var product3 =  Products(productID: "pro3", productName: "Bat",productType: ProductType.Others )
-    
     var product4 =  Products(productID: "pro4", productName: "Shoes",productType: ProductType.FootWare )
-    
     var product5 =  Products(productID: "pro5", productName: "Car",productType: ProductType.Automobiles )
-    
     var product6 =  Products(productID: "pro6", productName: "Bicycle",productType: ProductType.Automobiles )
-    
     var product7 =  Products(productID: "pro7", productName: "Mac",productType: ProductType.Miscelleneous )
-    
     var product8 =  Products(productID: "pro8", productName: "Iphone",productType: ProductType.Miscelleneous )
-    
     var product9 =  Products(productID: "pro9", productName: "Bag",productType: ProductType.Others )
-    
     var product10 =  Products(productID: "pro10", productName: "Sandles",productType: ProductType.FootWare )
     
-    
-    
-    
     var seller1 = Seller(id: 111, firstName: "Vipul", lastName: "Garg", gender: Gender.Male, email: "Vipul@gmail.com", password: "123456", userType: UserType.Seller, productList: [product1,product2], address: address1, bank: bankDetails1)
-    
     Users.addUsers(user : seller1)
-    
-    
+
     var seller2 = Seller(id: 222, firstName: "Raj", lastName: "Kaur", gender: Gender.Female, email: "Raj@gmail.com", password: "098765", userType: UserType.Seller, productList: [product3,product4], address: address2, bank: bankDetails2)
-    
     Users.addUsers(user : seller2)
     
     var seller3 = Seller(id: 333, firstName: "Shivani", lastName: "Dhiman", gender: Gender.Female, email: "Dhiman@gmail.com", password: "658847", userType: UserType.Seller, productList: [product5,product6], address: address3, bank: bankDetails3)
-    
     Users.addUsers(user : seller3)
     
     var seller4 = Seller(id: 444, firstName: "Naina", lastName: "Khan", gender: Gender.Female, email: "NK@gmail.com", password: "452525", userType: UserType.Seller, productList: [product7,product8], address: address4, bank: bankDetails4)
-    
     Users.addUsers(user : seller4)
     
     var buyer1 = Buyer(id: 555, firstName: "Kishore", lastName: "Narang", gender: Gender.Male, email: "Kishore@gmail.com", password: "1237778", userType: UserType.Buyer, productList: [product1], bankAccountEmail: "cibc123@gmail.com")
-    
     Users.addUsers(user : buyer1)
     
     var buyer2 = Buyer(id: 666, firstName: "Tirlok", lastName: "Bhist", gender: Gender.Male, email: "Kishore@gmail.com", password: "123123", userType: UserType.Buyer, productList: [product2], bankAccountEmail: "cibc123@gmail.com")
-    
     Users.addUsers(user : buyer2)
-    //
-    //var buyer3 = Buyer(id: 777, firstName: "Kishore", lastName: "Narang", gender: Gender.Male, email: "Kishore@gmail.com", password: "123123", userType: UserType.Buyer, productList: [:], bankAccountEmail: "cibc123@gmail.com")
 
 
 print("Enter the UserEmail")
@@ -87,41 +55,49 @@ print("Press 1 for SignIn")
 print("Press 2 for SignUp")
 print("or Enter 0 to Exit")
 
-
-//var finalEmail =  String()
-//var finalPassword = String()
 var inputCode = readLine()
-
 let inputCodeValue:String = inputCode!
 
 func exitFunction(){
     
 }
 
+func getUserOptions(user : Users)  {
+    
+    if user.userType == UserType.Admin{
+        print("Admin Logged In")
+    }else if user.userType == UserType.Buyer{
+        print("Buyer Logged In")
+    }else if user.userType == UserType.Seller{
+        print("Seller Logged In")
+    }
+    
+}
 
-func passwordFunction() {
+func passwordFunction(user: Users) {
     print("Please Enter Password")
     let passwordInput = readLine()
-
     if  passwordInput?.isEmpty != true {
-
         let isValidPass = passwordInput?.sizeCheck()
         if isValidPass == true{
-            print("you enter valid password \( passwordInput!)")
-//            finalPassword = passwordInput!
-
-
+            if passwordInput == user.password{
+                print("You have sucessfully logged in!")
+                getUserOptions(user: user)
+            }else{
+                print("your password did not match. please enter your password again")
+                passwordFunction(user : user)
+            }
+        }else if isValidPass == false{
+            print("You haven't entered correct length of password, please enter the password again!")
+            passwordFunction(user : user)
         }else{
-            passwordFunction()
+            print("You haven't enter the password, please enter the password!")
+            passwordFunction(user : user)
         }
-    }else{
-        print("You haven't enter the password, please enter the password!")
-        passwordFunction()
     }
 }
 
 func signInFunction(){
-    
     print("Please Enter UserEmail")
     print("or Enter 0 to Exit")
         let emailInput = readLine()
@@ -134,7 +110,7 @@ func signInFunction(){
                 let user = Users.findUser(email: emailInput!)
                 if user.email != "" {
                     print("you enter valid email \(String(describing: emailInput!))")
-                    passwordFunction()
+                    passwordFunction(user : user)
                 }else{
                     print("User Doesnot Exist try with other email id")
                     signInFunction()
@@ -150,8 +126,7 @@ func signInFunction(){
             signInFunction()
         }
 }
-    
-    
+
 func signUpFunction(){
     
 }
@@ -169,9 +144,6 @@ func userInput(){
 }
 
 userInput()
-
-
-
 
 
 //func readJsonFileArray(jsonFileName: String)
