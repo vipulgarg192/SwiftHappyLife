@@ -8,8 +8,6 @@ class Users : IDisplay{
     var password : String
     var userType : UserType
     
-    //    var productsList : Dictionary<Int, Products>
-    
     var arrayProducts:[Products] = [Products]()
 
     private static var dictProducts=[String:Products]()
@@ -19,7 +17,7 @@ class Users : IDisplay{
     }
 
     
-    init(id: Int , firstName : String , lastName : String , gender : Gender , email : String , password : String , userType : UserType , arrayProducts : [Products]) {
+    init(id: Int , firstName : String , lastName : String , gender : Gender , email : String , password : String , userType : UserType , arrayProducts : [Products]?) {
         
         self.id = id
         self.firstName = firstName
@@ -28,9 +26,26 @@ class Users : IDisplay{
         self.email = email
         self.password = password
         self.userType = UserType.Buyer
-        self.arrayProducts = arrayProducts
+        let a = arrayProducts!
+        do {
+            self.arrayProducts = a
+        }
+        
         
     }
+    
+    init(id: Int , firstName : String , lastName : String , gender : Gender , email : String , password : String) {
+        
+        self.id = id
+        self.firstName = firstName
+        self.lastName = lastName
+        self.gender = gender
+        self.email = email
+        self.password = password
+        self.userType = UserType.Admin
+        
+    }
+    
     
     init() {
         
@@ -59,23 +74,24 @@ class Users : IDisplay{
         
     }
     
+    
     static func addOrder(products: Products)
     {
         dictProducts.updateValue(products, forKey: products.productsId)
     }
     
     
-    static var dictOrders = [Int : Users]()
+    static var dictUsers = [Int : Users]()
     
     static func addUsers(user: Users)
     {
-        dictOrders.updateValue(user, forKey: user.id)
+        dictUsers.updateValue(user, forKey: user.id)
     }
     
     static func findUser(email : String) -> Users{
         var user = Users()
         
-        for item in dictOrders {
+        for item in dictUsers {
             if item.value.email.lowercased() == email.lowercased(){
                 user = item.value
             }

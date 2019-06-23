@@ -18,10 +18,7 @@ class Products : IDisplay{
     
     var  productsType : ProductType
     
-    
-    
-    
-    
+    static var arrayProducts = [Products]()
     
     
     init(productID : String , productName : String , productType : ProductType ) {

@@ -30,7 +30,22 @@ print("Welcome To HappyLifes")
     var product8 =  Products(productID: "pro8", productName: "Iphone",productType: ProductType.Miscelleneous )
     var product9 =  Products(productID: "pro9", productName: "Bag",productType: ProductType.Others )
     var product10 =  Products(productID: "pro10", productName: "Sandles",productType: ProductType.FootWare )
-    
+
+    Products.arrayProducts.append(product1)
+    Products.arrayProducts.append(product2)
+    Products.arrayProducts.append(product3)
+    Products.arrayProducts.append(product4)
+    Products.arrayProducts.append(product5)
+    Products.arrayProducts.append(product6)
+    Products.arrayProducts.append(product7)
+    Products.arrayProducts.append(product8)
+    Products.arrayProducts.append(product9)
+    Products.arrayProducts.append(product10)
+
+
+    var admin = Users(id: 451, firstName: "Admin", lastName: "admin", gender: Gender.Male, email: "admin@gmail.com", password: "123456")
+    Users.addUsers(user : admin)
+
     var seller1 = Seller(id: 111, firstName: "Vipul", lastName: "Garg", gender: Gender.Male, email: "Vipul@gmail.com", password: "123456", userType: UserType.Seller, productList: [product1,product2], address: address1, bank: bankDetails1)
     Users.addUsers(user : seller1)
 
@@ -50,100 +65,214 @@ print("Welcome To HappyLifes")
     Users.addUsers(user : buyer2)
 
 
-print("Enter the UserEmail")
-print("Press 1 for SignIn")
-print("Press 2 for SignUp")
-print("or Enter 0 to Exit")
+    print("Enter the UserEmail")
+    print("Press 1 for SignIn")
+    print("Press 2 for SignUp")
+    print("or Enter 0 to Exit")
 
-var inputCode = readLine()
-let inputCodeValue:String = inputCode!
+    var inputCode = readLine()
+    let inputCodeValue:String = inputCode!
 
-func exitFunction(){
-    
-}
-
-func getUserOptions(user : Users)  {
-    
-    if user.userType == UserType.Admin{
-        print("Admin Logged In")
-    }else if user.userType == UserType.Buyer{
-        print("Buyer Logged In")
-    }else if user.userType == UserType.Seller{
-        print("Seller Logged In")
+    func exitFunction(){
+        
     }
-    
+
+func enterEmail() -> String {
+    var email = readLine()
+    var returnVariable = ""
+    if email?.isEmpty == false {
+        let isValidEmail = email?.isVAlidEmail()
+        if isValidEmail == true{
+            returnVariable = email!
+        }else{
+            print("you enter invalid email \(String(describing: email))")
+            print("Please Enter Email Again")
+            enterEmail()
+        }
+    }else{
+        print("You haven't enter the email, please enter the email!")
+        enterEmail()
+    }
+    return returnVariable
 }
 
-func passwordFunction(user: Users) {
-    print("Please Enter Password")
-    let passwordInput = readLine()
-    if  passwordInput?.isEmpty != true {
-        let isValidPass = passwordInput?.sizeCheck()
+
+func enterPassword() -> String {
+    var pass = readLine()
+    var returnVariable = ""
+    if pass?.isEmpty == false {
+        let isValidPass = pass?.sizeCheck()
         if isValidPass == true{
-            if passwordInput == user.password{
-                print("You have sucessfully logged in!")
-                getUserOptions(user: user)
+            returnVariable = pass!
+        }else{
+            print("Entered length is short")
+            print("Please Enter Password Again")
+            enterPassword()
+        }
+    }else{
+        print("You haven't entered password, please enter !")
+        enterPassword()
+    }
+    return returnVariable
+}
+
+    func getUserOptions(user : Users)  {
+        
+        if user.userType == UserType.Admin{
+            print("Admin Logged In")
+            print("Press 1 to get all users")
+            print("Press 2 to get all Sellers")
+            print("Press 3 to get all Buyer")
+            print("Press 4 to get all Products")
+            print("Press 5 to Add new Seller")
+            print("Press 6 to Add new Buyer")
+            
+            let inputvar = readLine()
+            
+            switch inputvar {
+                case "1":
+                    for item in Users.dictUsers{
+                        item.value.Display()
+                    }
+                case "2":
+                    for item in Users.dictUsers{
+                        if item.value.userType == UserType.Seller{
+                            item.value.Display()
+                        }
+                    }
+                case "3":
+                    for item in Users.dictUsers{
+                        if item.value.userType == UserType.Buyer{
+                            item.value.Display()
+                        }
+                    }
+                case "4":
+                    for item in Products.arrayProducts{
+                            item.Display()
+                    }
+                case "5":
+                    print("Enter values to add new buyer")
+                    print("Enter id")
+                    guard var id = readLine() else { return }
+                    var vid = Int(id)
+                    print("Enter FirstName")
+                    guard let vfirstName = readLine() else { return }
+                    print("Enter lastName")
+                    guard let vlastName = readLine() else { return }
+                    print("Enter gender")
+                    var vgender = readLine()
+                    var gender = Gender.Other
+                    if vgender?.lowercased() == "male"{
+                       gender = Gender.Male
+                    }else if vgender?.lowercased() == "female"{
+                        gender = Gender.Female
+                    }else{
+                        gender = Gender.Other
+                    }
+                    
+                    var vemail = enterEmail()
+                
+                    var vpassword = enterPassword()
+                
+                    var vtype = UserType.Buyer
+                
+                    print("Enter Bank Email Id")
+                
+                    var vbankDetail = enterEmail()
+                
+                
+                    var b = Buyer(id: vid!, firstName: vfirstName, lastName: vlastName, gender: gender, email: vemail, password: vpassword, userType: vtype, bankAccountEmail: vbankDetail)
+                
+                    Users.addUsers(user: b)
+                 
+//                    print("")
+//                    id: 555, firstName: "Kishore", lastName: "Narang", gender: Gender.Male, email: "Kishore@gmail.com", password: "1237778", userType: UserType.Buyer, productList: [product1], bankAccountEmail: "cibc123@gmail.com"
+                
+            case "6":
+                    print("here")
+                default:
+                    print("Wrong input Please enter again")
+                    getUserOptions(user : user)
+            }
+            
+        }else if user.userType == UserType.Buyer{
+            print("Buyer Logged In")
+        }else if user.userType == UserType.Seller{
+            print("Seller Logged In")
+        }
+        
+    }
+
+    func passwordFunction(user: Users) {
+        print("Please Enter Password")
+        let passwordInput = readLine()
+        if  passwordInput?.isEmpty != true {
+            let isValidPass = passwordInput?.sizeCheck()
+            if isValidPass == true{
+                if passwordInput == user.password{
+                    print("You have sucessfully logged in!")
+                    getUserOptions(user: user)
+                }else{
+                    print("your password did not match. please enter your password again")
+                    passwordFunction(user : user)
+                }
+            }else if isValidPass == false{
+                print("You haven't entered correct length of password, please enter the password again!")
+                passwordFunction(user : user)
             }else{
-                print("your password did not match. please enter your password again")
+                print("You haven't enter the password, please enter the password!")
                 passwordFunction(user : user)
             }
-        }else if isValidPass == false{
-            print("You haven't entered correct length of password, please enter the password again!")
-            passwordFunction(user : user)
-        }else{
-            print("You haven't enter the password, please enter the password!")
-            passwordFunction(user : user)
         }
     }
-}
 
-func signInFunction(){
-    print("Please Enter UserEmail")
-    print("or Enter 0 to Exit")
-        let emailInput = readLine()
-        if emailInput == "0"{
-            exitFunction()
-        }
-        if emailInput?.isEmpty == false {
-            let isValidEmail = emailInput?.isVAlidEmail()
-            if isValidEmail == true{
-                let user = Users.findUser(email: emailInput!)
-                if user.email != "" {
-                    print("you enter valid email \(String(describing: emailInput!))")
-                    passwordFunction(user : user)
+    func signInFunction(){
+        print("Please Enter UserEmail")
+        print("or Enter 0 to Exit")
+            let emailInput = readLine()
+            if emailInput == "0"{
+                exitFunction()
+            }
+            if emailInput?.isEmpty == false {
+                let isValidEmail = emailInput?.isVAlidEmail()
+                if isValidEmail == true{
+                    let user = Users.findUser(email: emailInput!)
+                    if user.email != "" {
+                        print("you enter valid email \(String(describing: emailInput!))")
+                        passwordFunction(user : user)
+                    }else{
+                        print("User Doesnot Exist try with other email id")
+                        signInFunction()
+                    }
+
                 }else{
-                    print("User Doesnot Exist try with other email id")
+                    print("you enter invalid email \(String(describing: emailInput))")
+                    print("Please Enter Email Again")
                     signInFunction()
                 }
-
             }else{
-                print("you enter invalid email \(String(describing: emailInput))")
-                print("Please Enter Email Again")
+                print("You haven't enter the email, please enter the email!")
                 signInFunction()
             }
-        }else{
-            print("You haven't enter the email, please enter the email!")
-            signInFunction()
-        }
-}
-
-func signUpFunction(){
-    
-}
-    
-func userInput(){
-    if inputCode == "0"{
-        exitFunction()
-    }else if inputCode == "1" {
-        signInFunction()
-    }else if inputCode == "2" {
-        signUpFunction()
-    }else{
-        print("Invalid input Eneterd")
     }
-}
 
-userInput()
+    func signUpFunction(){
+        
+    }
+
+    func userInput(){
+        if inputCode == "0"{
+            exitFunction()
+        }else if inputCode == "1" {
+            signInFunction()
+        }else if inputCode == "2" {
+            signUpFunction()
+        }else{
+            print("Invalid input Eneterd")
+        }
+    }
+
+    userInput()
 
 
 //func readJsonFileArray(jsonFileName: String)
