@@ -134,62 +134,93 @@ func enterPassword() -> String {
                     for item in Users.dictUsers{
                         item.value.Display()
                     }
+                    getUserOptions(user: user)
                 case "2":
                     for item in Users.dictUsers{
                         if item.value.userType == UserType.Seller{
                             item.value.Display()
                         }
                     }
+                    getUserOptions(user: user)
                 case "3":
                     for item in Users.dictUsers{
                         if item.value.userType == UserType.Buyer{
                             item.value.Display()
                         }
                     }
+                    getUserOptions(user: user)
                 case "4":
                     for item in Products.arrayProducts{
                             item.Display()
                     }
+                   getUserOptions(user: user)
                 case "5":
-                    print("Enter values to add new buyer")
+                    print("Enter values to add new Seller")
                     print("Enter id")
-                    guard var id = readLine() else { return }
-                    var vid = Int(id)
+                    guard let id = readLine() else { return }
+                    let vid = Int(id)
                     print("Enter FirstName")
                     guard let vfirstName = readLine() else { return }
                     print("Enter lastName")
                     guard let vlastName = readLine() else { return }
                     print("Enter gender")
-                    var vgender = readLine()
+                    let vgender = readLine()
                     var gender = Gender.Other
                     if vgender?.lowercased() == "male"{
-                       gender = Gender.Male
+                        gender = Gender.Male
                     }else if vgender?.lowercased() == "female"{
                         gender = Gender.Female
                     }else{
                         gender = Gender.Other
                     }
                     
-                    var vemail = enterEmail()
-                
-                    var vpassword = enterPassword()
-                
-                    var vtype = UserType.Buyer
-                
+                    let vemail = enterEmail()
+                    let vpassword = enterPassword()
+                    let vtype = UserType.Seller
+                    
                     print("Enter Bank Email Id")
-                
-                    var vbankDetail = enterEmail()
-                
-                
-                    var b = Buyer(id: vid!, firstName: vfirstName, lastName: vlastName, gender: gender, email: vemail, password: vpassword, userType: vtype, bankAccountEmail: vbankDetail)
-                
-                    Users.addUsers(user: b)
-                 
-//                    print("")
-//                    id: 555, firstName: "Kishore", lastName: "Narang", gender: Gender.Male, email: "Kishore@gmail.com", password: "1237778", userType: UserType.Buyer, productList: [product1], bankAccountEmail: "cibc123@gmail.com"
+                    let vbankDetail = enterEmail()
+                    
+//                    var address1 = try Address(houseNo: "c142", streetName: "Queen St", city: "Brampton", country: "Canada", postalCode: "1466661")
+//
+//                    var b = Seller(id: vid!, firstName: vfirstName, lastName: vlastName, gender: gender, email: vemail, password: vpassword, userType: vtype, address: Address)
+                    
+//                    Users.addUsers(user: b)
+                    
+                    getUserOptions(user: user)
                 
             case "6":
-                    print("here")
+                    print("Enter values to add new buyer")
+                    print("Enter id")
+                    guard let id = readLine() else { return }
+                    let vid = Int(id)
+                    print("Enter FirstName")
+                    guard let vfirstName = readLine() else { return }
+                    print("Enter lastName")
+                    guard let vlastName = readLine() else { return }
+                    print("Enter gender")
+                    let vgender = readLine()
+                    var gender = Gender.Other
+                    if vgender?.lowercased() == "male"{
+                        gender = Gender.Male
+                    }else if vgender?.lowercased() == "female"{
+                        gender = Gender.Female
+                    }else{
+                        gender = Gender.Other
+                    }
+                    
+                    let vemail = enterEmail()
+                    let vpassword = enterPassword()
+                    var vtype = UserType.Buyer
+                    
+                    print("Enter Bank Email Id")
+                    var vbankDetail = enterEmail()
+                    
+                    var b = Buyer(id: vid!, firstName: vfirstName, lastName: vlastName, gender: gender, email: vemail, password: vpassword, userType: vtype, bankAccountEmail: vbankDetail)
+                    
+                    Users.addUsers(user: b)
+                    
+                    getUserOptions(user: user)
                 default:
                     print("Wrong input Please enter again")
                     getUserOptions(user : user)
