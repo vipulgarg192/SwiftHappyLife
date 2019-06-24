@@ -78,7 +78,7 @@ print("Welcome To HappyLifes")
     }
 
 func enterEmail() -> String {
-    var email = readLine()
+    let email = readLine()
     var returnVariable = ""
     if email?.isEmpty == false {
         let isValidEmail = email?.isVAlidEmail()
@@ -87,18 +87,18 @@ func enterEmail() -> String {
         }else{
             print("you enter invalid email \(String(describing: email))")
             print("Please Enter Email Again")
-            enterEmail()
+            return enterEmail()
         }
     }else{
         print("You haven't enter the email, please enter the email!")
-        enterEmail()
+        return enterEmail()
     }
     return returnVariable
 }
 
 
 func enterPassword() -> String {
-    var pass = readLine()
+    let pass = readLine()
     var returnVariable = ""
     if pass?.isEmpty == false {
         let isValidPass = pass?.sizeCheck()
@@ -107,11 +107,11 @@ func enterPassword() -> String {
         }else{
             print("Entered length is short")
             print("Please Enter Password Again")
-            enterPassword()
+            return enterPassword()
         }
     }else{
         print("You haven't entered password, please enter !")
-        enterPassword()
+        return enterPassword()
     }
     return returnVariable
 }
@@ -178,14 +178,51 @@ func enterPassword() -> String {
                     let vpassword = enterPassword()
                     let vtype = UserType.Seller
                     
-                    print("Enter Bank Email Id")
-                    let vbankDetail = enterEmail()
-                    
-//                    var address1 = try Address(houseNo: "c142", streetName: "Queen St", city: "Brampton", country: "Canada", postalCode: "1466661")
+//                    print("Enter Bank Email Id")
+//                    let vbankEmail = enterEmail()
 //
-//                    var b = Seller(id: vid!, firstName: vfirstName, lastName: vlastName, gender: gender, email: vemail, password: vpassword, userType: vtype, address: Address)
+//                    print("Enter Bank Address")
                     
-//                    Users.addUsers(user: b)
+                    print("Enter house no")
+                    guard let vhouseNo = readLine() else { return }
+                    
+                    print("Enter Street no")
+                    guard let vstreetName = readLine() else { return }
+                   
+                    print("Enter city")
+                    guard let vcity = readLine() else { return }
+                    
+                    print("Enter country")
+                    guard let vcountry = readLine() else { return }
+                    
+                    print("Enter postalCode")
+                    guard let vpostalCode = readLine() else { return }
+                    
+                    print("Enter Bank Details")
+                    print("Enter organistaion id")
+                    guard let vorganisationId = readLine() else { return }
+                    
+                    print("Enter bank Name")
+                    guard let vbankName = readLine() else { return }
+                    
+                    print("Enter account no")
+                    guard let vaccountNo = readLine() else { return }
+                    
+                    let  vbankDetails = Bank(organisationId: vorganisationId , bankName: vbankName , accountNo: vaccountNo)
+                    
+                    var vaddress = Address()
+
+                    do{
+                        vaddress =  try Address(houseNo: vhouseNo , streetName: vstreetName , city: vcity, country: vcountry, postalCode: vpostalCode)
+                    } catch let error {
+                        print("Error: \(error)")
+                    }
+//
+//                    let vaddress =  try Address(houseNo: vhouseNo , streetName: vstreetName , city: vcity, country: vcountry, postalCode: vpostalCode)
+                
+                    let b = Seller(id: vid!, firstName: vfirstName, lastName: vlastName, gender: gender, email: vemail, password: vpassword, userType: vtype, address: vaddress , bank: vbankDetails)
+                    
+                    Users.addUsers(user: b)
                     
                     getUserOptions(user: user)
                 
@@ -211,12 +248,12 @@ func enterPassword() -> String {
                     
                     let vemail = enterEmail()
                     let vpassword = enterPassword()
-                    var vtype = UserType.Buyer
+                    let vtype = UserType.Buyer
                     
                     print("Enter Bank Email Id")
-                    var vbankDetail = enterEmail()
+                    let vbankDetail = enterEmail()
                     
-                    var b = Buyer(id: vid!, firstName: vfirstName, lastName: vlastName, gender: gender, email: vemail, password: vpassword, userType: vtype, bankAccountEmail: vbankDetail)
+                    let b = Buyer(id: vid!, firstName: vfirstName, lastName: vlastName, gender: gender, email: vemail, password: vpassword, userType: vtype, bankAccountEmail: vbankDetail)
                     
                     Users.addUsers(user: b)
                     
@@ -224,12 +261,46 @@ func enterPassword() -> String {
                 default:
                     print("Wrong input Please enter again")
                     getUserOptions(user : user)
+                
             }
             
         }else if user.userType == UserType.Buyer{
             print("Buyer Logged In")
+            print("Press 1 to get all Products")
+            print("Press 2 to buy a product")
+            
+            let inputvar = readLine()
+            
+            switch inputvar {
+                case "1":
+                    for item in Products.arrayProducts{
+                        item.Display()
+                    }
+                    getUserOptions(user: user)
+                case "2":
+                    getUserOptions(user: user)
+                    for item in Products.arrayProducts{
+                        item.Display()
+                    }
+                    getUserOptions(user: user)
+                    print("Eneter id of product you want to buy")
+                    guard let id = readLine() else { return }
+//                    let vid = Int(id)
+                    for item in Products.arrayProducts{
+                        if item.productsId == id {
+                            item.Display()
+                        }
+                    }
+                
+                default:
+                    print("Wrong input Please enter again")
+                    getUserOptions(user : user)
+            }
+            
         }else if user.userType == UserType.Seller{
             print("Seller Logged In")
+            print("Press 1 to get all Products Added by you")
+            print("Press 2 to Add new product")
         }
         
     }
