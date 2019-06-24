@@ -18,10 +18,12 @@ class Products : IDisplay{
     
     var  productsType : ProductType
     
+    var userId : Users
+    
     static var arrayProducts = [Products]()
     
     
-    init(productID : String , productName : String , productType : ProductType ) {
+    init(productID : String , productName : String , productType : ProductType , userId: Users) {
         
         self.productsId = String()
         
@@ -29,7 +31,7 @@ class Products : IDisplay{
         
         self.productsType = productType
         
-        
+        self.userId = userId
         
     }
     

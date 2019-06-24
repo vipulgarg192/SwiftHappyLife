@@ -20,7 +20,8 @@ print("Welcome To HappyLifes")
     var address3 = try Address(houseNo: "L979", streetName: "Ace St", city: "Toronto", country: "Canada", postalCode: "3445656")
     var address4 = try Address(houseNo: "G393", streetName: "Main St", city: "Monteral", country: "Canada", postalCode: "678909")
 
-    var product1 =  Products(productID: "pro1", productName: "Cap",productType: ProductType.Clothes )
+ 
+    var product1 =  Products(productID: "pro1", productName: "Cap",productType: ProductType.Clothes  )
     var product2 =  Products(productID: "pro2", productName: "Shirt",productType: ProductType.Clothes )
     var product3 =  Products(productID: "pro3", productName: "Bat",productType: ProductType.Others )
     var product4 =  Products(productID: "pro4", productName: "Shoes",productType: ProductType.FootWare )
@@ -46,7 +47,7 @@ print("Welcome To HappyLifes")
     var admin = Users(id: 451, firstName: "Admin", lastName: "admin", gender: Gender.Male, email: "admin@gmail.com", password: "123456")
     Users.addUsers(user : admin)
 
-    var seller1 = Seller(id: 111, firstName: "Vipul", lastName: "Garg", gender: Gender.Male, email: "Vipul@gmail.com", password: "123456", userType: UserType.Seller, productList: [product1,product2], address: address1, bank: bankDetails1)
+var seller1 = Seller(id: 111, firstName: "Vipul", lastName: "Garg", gender: Gender.Male, email: "Vipul@gmail.com", password: "123456", userType: UserType.Seller, productList: [product1,product2], address: address1, bank: bankDetails1)
     Users.addUsers(user : seller1)
 
     var seller2 = Seller(id: 222, firstName: "Raj", lastName: "Kaur", gender: Gender.Female, email: "Raj@gmail.com", password: "098765", userType: UserType.Seller, productList: [product3,product4], address: address2, bank: bankDetails2)
@@ -301,6 +302,35 @@ func enterPassword() -> String {
             print("Seller Logged In")
             print("Press 1 to get all Products Added by you")
             print("Press 2 to Add new product")
+            
+            let inputvar = readLine()
+            
+            switch inputvar {
+            case "1":
+                for item in Products.arrayProducts{
+                
+                    item.Display()
+                }
+                getUserOptions(user: user)
+            case "2":
+                getUserOptions(user: user)
+                for item in Products.arrayProducts{
+                    item.Display()
+                }
+                getUserOptions(user: user)
+                print("Eneter id of product you want to buy")
+                guard let id = readLine() else { return }
+                //                    let vid = Int(id)
+                for item in Products.arrayProducts{
+                    if item.productsId == id {
+                        item.Display()
+                    }
+                }
+                
+            default:
+                print("Wrong input Please enter again")
+                getUserOptions(user : user)
+            }
         }
         
     }
