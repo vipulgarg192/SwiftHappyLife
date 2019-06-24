@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SwiftHappyLife.xcodeproj">
+      location = "self:Group6_Happylife.xcodeproj">
    </FileRef>
 </Workspace>

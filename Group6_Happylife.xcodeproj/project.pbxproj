@@ -7,19 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9BF7936A22BAE95A00623F94 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7936922BAE95A00623F94 /* main.swift */; };
-		9BF7937622BAEA6400623F94 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7937522BAEA6400623F94 /* Users.swift */; };
-		9BF7937922BAEA8400623F94 /* Buyers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7937822BAEA8400623F94 /* Buyers.swift */; };
-		9BF7937B22BAEA8E00623F94 /* Sellers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7937A22BAEA8E00623F94 /* Sellers.swift */; };
-		9BF7937D22BAEAAF00623F94 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7937C22BAEAAF00623F94 /* Address.swift */; };
-		9BF7937F22BAEABB00623F94 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7937E22BAEABB00623F94 /* Enums.swift */; };
-		9BF7938322BAEAD900623F94 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7938222BAEAD900623F94 /* Products.swift */; };
-		9BF7938522BAEAE800623F94 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7938422BAEAE800623F94 /* Utility.swift */; };
-		9BF7938722BAEB0600623F94 /* IDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7938622BAEB0600623F94 /* IDisplay.swift */; };
+		9B0CE4F022C1598300FC4FF8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0CE4EF22C1598300FC4FF8 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9BF7936422BAE95A00623F94 /* CopyFiles */ = {
+		9B0CE4EA22C1598300FC4FF8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -31,20 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9BF7936622BAE95A00623F94 /* SwiftHappyLife */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftHappyLife; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BF7936922BAE95A00623F94 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		9BF7937522BAEA6400623F94 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
-		9BF7937822BAEA8400623F94 /* Buyers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buyers.swift; sourceTree = "<group>"; };
-		9BF7937A22BAEA8E00623F94 /* Sellers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sellers.swift; sourceTree = "<group>"; };
-		9BF7937C22BAEAAF00623F94 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		9BF7937E22BAEABB00623F94 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		9BF7938222BAEAD900623F94 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
-		9BF7938422BAEAE800623F94 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		9BF7938622BAEB0600623F94 /* IDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDisplay.swift; sourceTree = "<group>"; };
+		9B0CE4EC22C1598300FC4FF8 /* Group6_Happylife */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Group6_Happylife; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B0CE4EF22C1598300FC4FF8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9BF7936322BAE95A00623F94 /* Frameworks */ = {
+		9B0CE4E922C1598300FC4FF8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -54,135 +38,95 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9BF7935D22BAE95A00623F94 = {
+		9B0CE4E322C1598300FC4FF8 = {
 			isa = PBXGroup;
 			children = (
-				9BF7936822BAE95A00623F94 /* SwiftHappyLife */,
-				9BF7936722BAE95A00623F94 /* Products */,
+				9B0CE4EE22C1598300FC4FF8 /* Group6_Happylife */,
+				9B0CE4ED22C1598300FC4FF8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9BF7936722BAE95A00623F94 /* Products */ = {
+		9B0CE4ED22C1598300FC4FF8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9BF7936622BAE95A00623F94 /* SwiftHappyLife */,
+				9B0CE4EC22C1598300FC4FF8 /* Group6_Happylife */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9BF7936822BAE95A00623F94 /* SwiftHappyLife */ = {
+		9B0CE4EE22C1598300FC4FF8 /* Group6_Happylife */ = {
 			isa = PBXGroup;
 			children = (
-				9BF7937222BAEA3300623F94 /* users */,
-				9BF7937322BAEA3D00623F94 /* utility */,
-				9BF7937422BAEA4600623F94 /* protocols */,
-				9BF7936922BAE95A00623F94 /* main.swift */,
+				9B0CE4EF22C1598300FC4FF8 /* main.swift */,
 			);
-			path = SwiftHappyLife;
-			sourceTree = "<group>";
-		};
-		9BF7937222BAEA3300623F94 /* users */ = {
-			isa = PBXGroup;
-			children = (
-				9BF7937522BAEA6400623F94 /* Users.swift */,
-				9BF7937822BAEA8400623F94 /* Buyers.swift */,
-				9BF7937A22BAEA8E00623F94 /* Sellers.swift */,
-			);
-			path = users;
-			sourceTree = "<group>";
-		};
-		9BF7937322BAEA3D00623F94 /* utility */ = {
-			isa = PBXGroup;
-			children = (
-				9BF7937C22BAEAAF00623F94 /* Address.swift */,
-				9BF7937E22BAEABB00623F94 /* Enums.swift */,
-				9BF7938222BAEAD900623F94 /* Products.swift */,
-				9BF7938422BAEAE800623F94 /* Utility.swift */,
-			);
-			path = utility;
-			sourceTree = "<group>";
-		};
-		9BF7937422BAEA4600623F94 /* protocols */ = {
-			isa = PBXGroup;
-			children = (
-				9BF7938622BAEB0600623F94 /* IDisplay.swift */,
-			);
-			path = protocols;
+			path = Group6_Happylife;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9BF7936522BAE95A00623F94 /* SwiftHappyLife */ = {
+		9B0CE4EB22C1598300FC4FF8 /* Group6_Happylife */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9BF7936D22BAE95A00623F94 /* Build configuration list for PBXNativeTarget "SwiftHappyLife" */;
+			buildConfigurationList = 9B0CE4F322C1598300FC4FF8 /* Build configuration list for PBXNativeTarget "Group6_Happylife" */;
 			buildPhases = (
-				9BF7936222BAE95A00623F94 /* Sources */,
-				9BF7936322BAE95A00623F94 /* Frameworks */,
-				9BF7936422BAE95A00623F94 /* CopyFiles */,
+				9B0CE4E822C1598300FC4FF8 /* Sources */,
+				9B0CE4E922C1598300FC4FF8 /* Frameworks */,
+				9B0CE4EA22C1598300FC4FF8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SwiftHappyLife;
-			productName = SwiftHappyLife;
-			productReference = 9BF7936622BAE95A00623F94 /* SwiftHappyLife */;
+			name = Group6_Happylife;
+			productName = Group6_Happylife;
+			productReference = 9B0CE4EC22C1598300FC4FF8 /* Group6_Happylife */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9BF7935E22BAE95A00623F94 /* Project object */ = {
+		9B0CE4E422C1598300FC4FF8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = MacStudent;
 				TargetAttributes = {
-					9BF7936522BAE95A00623F94 = {
+					9B0CE4EB22C1598300FC4FF8 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 9BF7936122BAE95A00623F94 /* Build configuration list for PBXProject "SwiftHappyLife" */;
+			buildConfigurationList = 9B0CE4E722C1598300FC4FF8 /* Build configuration list for PBXProject "Group6_Happylife" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 9BF7935D22BAE95A00623F94;
-			productRefGroup = 9BF7936722BAE95A00623F94 /* Products */;
+			mainGroup = 9B0CE4E322C1598300FC4FF8;
+			productRefGroup = 9B0CE4ED22C1598300FC4FF8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9BF7936522BAE95A00623F94 /* SwiftHappyLife */,
+				9B0CE4EB22C1598300FC4FF8 /* Group6_Happylife */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9BF7936222BAE95A00623F94 /* Sources */ = {
+		9B0CE4E822C1598300FC4FF8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BF7937622BAEA6400623F94 /* Users.swift in Sources */,
-				9BF7936A22BAE95A00623F94 /* main.swift in Sources */,
-				9BF7937B22BAEA8E00623F94 /* Sellers.swift in Sources */,
-				9BF7938322BAEAD900623F94 /* Products.swift in Sources */,
-				9BF7938522BAEAE800623F94 /* Utility.swift in Sources */,
-				9BF7937922BAEA8400623F94 /* Buyers.swift in Sources */,
-				9BF7937F22BAEABB00623F94 /* Enums.swift in Sources */,
-				9BF7937D22BAEAAF00623F94 /* Address.swift in Sources */,
-				9BF7938722BAEB0600623F94 /* IDisplay.swift in Sources */,
+				9B0CE4F022C1598300FC4FF8 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		9BF7936B22BAE95A00623F94 /* Debug */ = {
+		9B0CE4F122C1598300FC4FF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -243,7 +187,7 @@
 			};
 			name = Debug;
 		};
-		9BF7936C22BAE95A00623F94 /* Release */ = {
+		9B0CE4F222C1598300FC4FF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -297,7 +241,7 @@
 			};
 			name = Release;
 		};
-		9BF7936E22BAE95A00623F94 /* Debug */ = {
+		9B0CE4F422C1598300FC4FF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -306,7 +250,7 @@
 			};
 			name = Debug;
 		};
-		9BF7936F22BAE95A00623F94 /* Release */ = {
+		9B0CE4F522C1598300FC4FF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -318,25 +262,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9BF7936122BAE95A00623F94 /* Build configuration list for PBXProject "SwiftHappyLife" */ = {
+		9B0CE4E722C1598300FC4FF8 /* Build configuration list for PBXProject "Group6_Happylife" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9BF7936B22BAE95A00623F94 /* Debug */,
-				9BF7936C22BAE95A00623F94 /* Release */,
+				9B0CE4F122C1598300FC4FF8 /* Debug */,
+				9B0CE4F222C1598300FC4FF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9BF7936D22BAE95A00623F94 /* Build configuration list for PBXNativeTarget "SwiftHappyLife" */ = {
+		9B0CE4F322C1598300FC4FF8 /* Build configuration list for PBXNativeTarget "Group6_Happylife" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9BF7936E22BAE95A00623F94 /* Debug */,
-				9BF7936F22BAE95A00623F94 /* Release */,
+				9B0CE4F422C1598300FC4FF8 /* Debug */,
+				9B0CE4F522C1598300FC4FF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9BF7935E22BAE95A00623F94 /* Project object */;
+	rootObject = 9B0CE4E422C1598300FC4FF8 /* Project object */;
 }
