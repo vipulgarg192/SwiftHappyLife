@@ -24,9 +24,9 @@ class Products : IDisplay{
     
     init(productID : String , productName : String , productType : ProductType) {
         
-        self.productsId = String()
+        self.productsId = productID
         
-        self.productsName = String()
+        self.productsName = productName
         
         self.productsType = productType
         
@@ -36,11 +36,11 @@ class Products : IDisplay{
     
     func Display() {
         
-        print("\t ProductID: \(productsId)\n")
+        print("\t ProductID: \(self.productsId)\n")
         
-        print("\t ProductName: \(productsName)\n")
+        print("\t ProductName: \(self.productsName)\n")
         
-        print("\t ProductType: \(productsType)\n")
+        print("\t ProductType: \(self.productsType)\n")
         
     }
     

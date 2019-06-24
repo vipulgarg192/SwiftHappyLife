@@ -32,6 +32,11 @@ var product8 =  Products(productID: "pro8", productName: "Iphone",productType: P
 var product9 =  Products(productID: "pro9", productName: "Bag",productType: ProductType.Others )
 var product10 =  Products(productID: "pro10", productName: "Sandles",productType: ProductType.FootWare )
 
+
+
+product1.Display()
+
+
 Products.arrayProducts.append(product1)
 Products.arrayProducts.append(product2)
 Products.arrayProducts.append(product3)
@@ -50,7 +55,7 @@ Users.addUsers(user : admin)
 var seller1 = Seller(id: 111, firstName: "Vipul", lastName: "Garg", gender: Gender.Male, email: "Vipul@gmail.com", password: "123456", userType: UserType.Seller, productList: [product1,product2], address: address1, bank: bankDetails1)
 Users.addUsers(user : seller1)
 
-var seller2 = Seller(id: 222, firstName: "Raj", lastName: "Kaur", gender: Gender.Female, email: "Raj@gmail.com", password: "098765", userType: UserType.Seller, productList: [product3,product4], address: address2, bank: bankDetails2)
+var seller2 = Seller(id: 222, firstName: "Raj", lastName: "Kaur", gender: Gender.Female, email: "Raj@gmail.com", password: "000000", userType: UserType.Seller, productList: [product3,product4], address: address2, bank: bankDetails2)
 Users.addUsers(user : seller2)
 
 var seller3 = Seller(id: 333, firstName: "Shivani", lastName: "Dhiman", gender: Gender.Female, email: "Dhiman@gmail.com", password: "658847", userType: UserType.Seller, productList: [product5,product6], address: address3, bank: bankDetails3)
@@ -350,7 +355,6 @@ func getUserOptions(user : Users)  {
             for item in Products.arrayProducts{
                 item.Display()
             }
-            getUserOptions(user: user)
             print("Eneter id of product you want to buy")
             guard let id = readLine() else { return }
             if id == "0"{
@@ -364,6 +368,7 @@ func getUserOptions(user : Users)  {
                     item.Display()
                 }
             }
+            getUserOptions(user: user)
             
         default:
             print("Wrong input Please enter again")
@@ -373,7 +378,6 @@ func getUserOptions(user : Users)  {
     }else if user.userType == UserType.Seller{
         print("Seller Logged In")
         print("Press 1 to get all Products Added by you")
-        print("Press 2 to Add new product")
         
         let inputvar = readLine()
         if inputvar == "0"{
@@ -385,29 +389,37 @@ func getUserOptions(user : Users)  {
             exitFunction()
         case "1":
             for item in Products.arrayProducts{
+                print("product id :\(item.productsId)")
+                print("product name :\(item.productsName)")
+                print("product type:\(item.productsType)")
                 
-                item.Display()
             }
             getUserOptions(user: user)
+            
         case "2":
-            getUserOptions(user: user)
-            for item in Products.arrayProducts{
-                item.Display()
-            }
-            getUserOptions(user: user)
-            print("Eneter id of product you want to buy")
+            print("add product")
+            print("Enter Id")
+            
             guard let id = readLine() else { return }
             if id == "0"{
                 exitFunction()
             }
             
-            //                    let vid = Int(id)
-            for item in Products.arrayProducts{
-                if item.productsId == id {
-                    item.Display()
-                }
+            print("Enter ProductName")
+            guard let vproductName = readLine() else { return }
+            if vproductName == "0"{
+                exitFunction()
             }
             
+            print("Enter product type")
+            guard let vlastName = readLine() else { return }
+            if vlastName == "0"{
+                exitFunction()
+            }
+            
+            let vproduct =  Products(productID: id , productName: vproductName, productType: ProductType.Miscelleneous )
+            Products.arrayProducts.append(vproduct)
+ 
         default:
             print("Wrong input Please enter again")
             getUserOptions(user : user)

@@ -26,11 +26,12 @@ class Users : IDisplay{
         self.email = email
         self.password = password
         self.userType = UserType
-        let a = arrayProducts!
-        do {
-            self.arrayProducts = a
-        }
-        
+//        let a = arrayProducts!
+//        do {
+//            self.arrayProducts = a
+//        }
+        self.arrayProducts = arrayProducts
+//        print(self.arrayProducts)
         
     }
     
