@@ -378,6 +378,7 @@ func getUserOptions(user : Users)  {
     }else if user.userType == UserType.Seller{
         print("Seller Logged In")
         print("Press 1 to get all Products Added by you")
+        print("Press 2 to add product")
         
         let inputvar = readLine()
         if inputvar == "0"{
