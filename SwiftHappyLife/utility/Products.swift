@@ -17,21 +17,18 @@ class Products : IDisplay{
     var  productsName : String
     
     var  productsType : ProductType
-    
-    var userId : Users
+
     
     static var arrayProducts = [Products]()
     
     
-    init(productID : String , productName : String , productType : ProductType , userId: Users) {
+    init(productID : String , productName : String , productType : ProductType) {
         
         self.productsId = String()
         
         self.productsName = String()
         
         self.productsType = productType
-        
-        self.userId = userId
         
     }
     
