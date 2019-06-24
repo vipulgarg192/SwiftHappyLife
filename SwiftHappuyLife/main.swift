@@ -33,10 +33,6 @@ var product9 =  Products(productID: "pro9", productName: "Bag",productType: Prod
 var product10 =  Products(productID: "pro10", productName: "Sandles",productType: ProductType.FootWare )
 
 
-
-product1.Display()
-
-
 Products.arrayProducts.append(product1)
 Products.arrayProducts.append(product2)
 Products.arrayProducts.append(product3)
