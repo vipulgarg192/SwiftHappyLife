@@ -143,12 +143,14 @@ func getUserOptions(user : Users)  {
             exitFunction()
         case "1":
             for item in Users.dictUsers{
+                print("******************")
                 item.value.Display()
             }
             getUserOptions(user: user)
         case "2":
             for item in Users.dictUsers{
                 if item.value.userType == UserType.Seller{
+                    print("******************")
                     item.value.Display()
                 }
                 
@@ -157,7 +159,9 @@ func getUserOptions(user : Users)  {
         case "3":
             for item in Users.dictUsers{
                 if item.value.userType == UserType.Buyer{
-                    item.value.Display()
+                    print("******************")
+                    let i = item.value as! Buyer
+                    i.Display()
                 }
             }
             getUserOptions(user: user)
@@ -268,6 +272,7 @@ func getUserOptions(user : Users)  {
             
             let b = Seller(id: vid!, firstName: vfirstName, lastName: vlastName, gender: gender, email: vemail, password: vpassword, userType: vtype, address: vaddress , bank: vbankDetails)
             
+            print("User has been added")
             Users.addUsers(user: b)
             
             getUserOptions(user: user)
@@ -318,6 +323,7 @@ func getUserOptions(user : Users)  {
             let vbankDetail = enterEmail()
             
             let b = Buyer(id: vid!, firstName: vfirstName, lastName: vlastName, gender: gender, email: vemail, password: vpassword, userType: vtype, bankAccountEmail: vbankDetail)
+            print("user added")
             
             Users.addUsers(user: b)
             
@@ -386,9 +392,11 @@ func getUserOptions(user : Users)  {
             exitFunction()
         case "1":
             for item in Products.arrayProducts{
-                print("product id :\(item.productsId)")
-                print("product name :\(item.productsName)")
-                print("product type:\(item.productsType)")
+                  item.Display()
+//                print("*********************************")
+//                print("product id :\(item.productsId)")
+//                print("product name :\(item.productsName)")
+//                print("product type:\(item.productsType)")
                 
             }
             getUserOptions(user: user)

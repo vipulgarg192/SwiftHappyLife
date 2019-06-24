@@ -35,11 +35,9 @@ class Products : IDisplay{
     
     
     func Display() {
-        
-        print("\t ProductID: \(self.productsId)\n")
-        
-        print("\t ProductName: \(self.productsName)\n")
-        
+        print("*********************************")
+        print("\t ProductID: \(self.productsId)")
+        print("\t ProductName: \(self.productsName)")
         print("\t ProductType: \(self.productsType)\n")
         
     }

@@ -10,7 +10,7 @@ class Users : IDisplay{
     
     var arrayProducts:[Products] = [Products]()
 
-    private static var dictProducts=[String:Products]()
+    private static var dictProducts = [String:Products]()
 
     var fullName : String{
         return "\(firstName ) \(lastName)"
