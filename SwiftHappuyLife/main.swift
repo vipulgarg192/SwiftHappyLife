@@ -54,6 +54,8 @@ var seller2 = Seller(id: 222, firstName: "Raj", lastName: "Kaur", gender: Gender
 Users.addUsers(user : seller2)
 
 var seller3 = Seller(id: 333, firstName: "Shivani", lastName: "Dhiman", gender: Gender.Female, email: "Dhiman@gmail.com", password: "658847", userType: UserType.Seller, productList: [product5,product6], address: address3, bank: bankDetails3)
+
+
 Users.addUsers(user : seller3)
 
 var seller4 = Seller(id: 444, firstName: "Naina", lastName: "Khan", gender: Gender.Female, email: "NK@gmail.com", password: "452525", userType: UserType.Seller, productList: [product7,product8], address: address4, bank: bankDetails4)
@@ -141,6 +143,7 @@ func getUserOptions(user : Users)  {
                 if item.value.userType == UserType.Seller{
                     item.value.Display()
                 }
+                
             }
             getUserOptions(user: user)
         case "3":
