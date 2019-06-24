@@ -41,6 +41,12 @@
 		9B3D5C4522C161B800100743 /* Sellers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Sellers.swift; path = ../../../../../Documents/Sellers.swift; sourceTree = "<group>"; };
 		9B3D5C4722C161D300100743 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Users.swift; path = ../../../../../Documents/Users.swift; sourceTree = "<group>"; };
 		9B3D5C4922C161F700100743 /* IDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IDisplay.swift; path = ../../../Documents/IDisplay.swift; sourceTree = "<group>"; };
+		9B5AB01622C16B980030061D /* SwiftHappuyLife */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SwiftHappuyLife; sourceTree = "<group>"; };
+		9B5AB01722C16BA70030061D /* protocols */ = {isa = PBXFileReference; lastKnownFileType = folder; path = protocols; sourceTree = "<group>"; };
+		9B5AB01822C16BB00030061D /* utility */ = {isa = PBXFileReference; lastKnownFileType = folder; path = utility; sourceTree = "<group>"; };
+		9B5AB01922C16BB90030061D /* users */ = {isa = PBXFileReference; lastKnownFileType = folder; path = users; sourceTree = "<group>"; };
+		9B5AB01A22C16BBD0030061D /* resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
+		9B5AB01B22C16BC20030061D /* protocols */ = {isa = PBXFileReference; lastKnownFileType = folder; path = protocols; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				9B0555F522C15FC900A217C6 /* SwiftHappuyLife */,
+				9B5AB01622C16B980030061D /* SwiftHappuyLife */,
 				9B0555F422C15FC900A217C6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +80,11 @@
 		9B0555F522C15FC900A217C6 /* SwiftHappuyLife */ = {
 			isa = PBXGroup;
 			children = (
+				9B5AB01B22C16BC20030061D /* protocols */,
+				9B5AB01A22C16BBD0030061D /* resources */,
+				9B5AB01922C16BB90030061D /* users */,
+				9B5AB01822C16BB00030061D /* utility */,
+				9B5AB01722C16BA70030061D /* protocols */,
 				9B3D5C3A22C1608700100743 /* utility */,
 				9B3D5C3822C1605E00100743 /* users */,
 				9B3D5C3722C1604F00100743 /* resources */,

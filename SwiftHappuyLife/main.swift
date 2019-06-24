@@ -55,7 +55,6 @@ Users.addUsers(user : seller2)
 
 var seller3 = Seller(id: 333, firstName: "Shivani", lastName: "Dhiman", gender: Gender.Female, email: "Dhiman@gmail.com", password: "658847", userType: UserType.Seller, productList: [product5,product6], address: address3, bank: bankDetails3)
 
-
 Users.addUsers(user : seller3)
 
 var seller4 = Seller(id: 444, firstName: "Naina", lastName: "Khan", gender: Gender.Female, email: "NK@gmail.com", password: "452525", userType: UserType.Seller, productList: [product7,product8], address: address4, bank: bankDetails4)
@@ -68,20 +67,17 @@ var buyer2 = Buyer(id: 666, firstName: "Tirlok", lastName: "Bhist", gender: Gend
 Users.addUsers(user : buyer2)
 
 
-print("Enter the UserEmail")
-print("Press 1 for SignIn")
-print("Press 2 for SignUp")
-print("or Enter 0 to Exit")
-
-var inputCode = readLine()
-let inputCodeValue:String = inputCode!
 
 func exitFunction(){
-    
+    return
 }
 
 func enterEmail() -> String {
     let email = readLine()
+    if email == "0"{
+        exitFunction()
+    }
+    
     var returnVariable = ""
     if email?.isEmpty == false {
         let isValidEmail = email?.isVAlidEmail()
@@ -102,6 +98,13 @@ func enterEmail() -> String {
 
 func enterPassword() -> String {
     let pass = readLine()
+    if pass == "0"{
+        exitFunction()
+    }
+    
+    if pass == "0"{
+        exitFunction()
+    }
     var returnVariable = ""
     if pass?.isEmpty == false {
         let isValidPass = pass?.sizeCheck()
@@ -131,6 +134,9 @@ func getUserOptions(user : Users)  {
         print("Press 6 to Add new Buyer")
         
         let inputvar = readLine()
+        if inputvar == "0"{
+            exitFunction()
+        }
         
         switch inputvar {
         case "1":
@@ -162,14 +168,27 @@ func getUserOptions(user : Users)  {
             print("Enter values to add new Seller")
             print("Enter id")
             guard let id = readLine() else { return }
+            if id == "0"{
+                exitFunction()
+            }
             let vid = Int(id)
             print("Enter FirstName")
             guard let vfirstName = readLine() else { return }
+            if vfirstName == "0"{
+                exitFunction()
+            }
             print("Enter lastName")
             guard let vlastName = readLine() else { return }
+            if vlastName == "0"{
+                exitFunction()
+            }
             print("Enter gender")
             let vgender = readLine()
+            if vgender == "0"{
+                exitFunction()
+            }
             var gender = Gender.Other
+            
             if vgender?.lowercased() == "male"{
                 gender = Gender.Male
             }else if vgender?.lowercased() == "female"{
@@ -178,7 +197,9 @@ func getUserOptions(user : Users)  {
                 gender = Gender.Other
             }
             
+            print("Enter Email")
             let vemail = enterEmail()
+            print("Enter password")
             let vpassword = enterPassword()
             let vtype = UserType.Seller
             
@@ -189,28 +210,47 @@ func getUserOptions(user : Users)  {
             
             print("Enter house no")
             guard let vhouseNo = readLine() else { return }
-            
+            if vhouseNo == "0"{
+                exitFunction()
+            }
             print("Enter Street no")
             guard let vstreetName = readLine() else { return }
-            
+            if vstreetName == "0"{
+                exitFunction()
+            }
             print("Enter city")
             guard let vcity = readLine() else { return }
-            
+            if vcity == "0"{
+                exitFunction()
+            }
             print("Enter country")
             guard let vcountry = readLine() else { return }
-            
+            if vcountry == "0"{
+                exitFunction()
+            }
             print("Enter postalCode")
             guard let vpostalCode = readLine() else { return }
-            
+            if vpostalCode == "0"{
+                exitFunction()
+            }
             print("Enter Bank Details")
             print("Enter organistaion id")
             guard let vorganisationId = readLine() else { return }
+            if vorganisationId == "0"{
+                exitFunction()
+            }
             
             print("Enter bank Name")
             guard let vbankName = readLine() else { return }
+            if vbankName == "0"{
+                exitFunction()
+            }
             
             print("Enter account no")
             guard let vaccountNo = readLine() else { return }
+            if vaccountNo == "0"{
+                exitFunction()
+            }
             
             let  vbankDetails = Bank(organisationId: vorganisationId , bankName: vbankName , accountNo: vaccountNo)
             
@@ -234,13 +274,29 @@ func getUserOptions(user : Users)  {
             print("Enter values to add new buyer")
             print("Enter id")
             guard let id = readLine() else { return }
+            if id == "0"{
+                exitFunction()
+            }
+            
             let vid = Int(id)
             print("Enter FirstName")
             guard let vfirstName = readLine() else { return }
+            if vfirstName == "0"{
+                exitFunction()
+            }
+            
             print("Enter lastName")
             guard let vlastName = readLine() else { return }
+            if vlastName == "0"{
+                exitFunction()
+            }
+            
             print("Enter gender")
             let vgender = readLine()
+            if vgender == "0"{
+                exitFunction()
+            }
+            
             var gender = Gender.Other
             if vgender?.lowercased() == "male"{
                 gender = Gender.Male
@@ -250,7 +306,9 @@ func getUserOptions(user : Users)  {
                 gender = Gender.Other
             }
             
+            print("Enter Email")
             let vemail = enterEmail()
+            print("Enter Password")
             let vpassword = enterPassword()
             let vtype = UserType.Buyer
             
@@ -274,6 +332,9 @@ func getUserOptions(user : Users)  {
         print("Press 2 to buy a product")
         
         let inputvar = readLine()
+        if inputvar == "0"{
+            exitFunction()
+        }
         
         switch inputvar {
         case "1":
@@ -289,6 +350,9 @@ func getUserOptions(user : Users)  {
             getUserOptions(user: user)
             print("Eneter id of product you want to buy")
             guard let id = readLine() else { return }
+            if id == "0"{
+                exitFunction()
+            }
             //                    let vid = Int(id)
             for item in Products.arrayProducts{
                 if item.productsId == id {
@@ -307,6 +371,9 @@ func getUserOptions(user : Users)  {
         print("Press 2 to Add new product")
         
         let inputvar = readLine()
+        if inputvar == "0"{
+            exitFunction()
+        }
         
         switch inputvar {
         case "1":
@@ -323,6 +390,10 @@ func getUserOptions(user : Users)  {
             getUserOptions(user: user)
             print("Eneter id of product you want to buy")
             guard let id = readLine() else { return }
+            if id == "0"{
+                exitFunction()
+            }
+            
             //                    let vid = Int(id)
             for item in Products.arrayProducts{
                 if item.productsId == id {
@@ -341,6 +412,10 @@ func getUserOptions(user : Users)  {
 func passwordFunction(user: Users) {
     print("Please Enter Password")
     let passwordInput = readLine()
+    if passwordInput == "0"{
+        exitFunction()
+    }
+    
     if  passwordInput?.isEmpty != true {
         let isValidPass = passwordInput?.sizeCheck()
         if isValidPass == true{
@@ -393,9 +468,71 @@ func signInFunction(){
 
 func signUpFunction(){
     
+    print("Enter values")
+    print("Enter id")
+    guard let id = readLine() else { return }
+    if id == "0"{
+        exitFunction()
+    }
+    
+    let vid = Int(id)
+    print("Enter FirstName")
+    guard let vfirstName = readLine() else { return }
+    if vfirstName == "0"{
+        exitFunction()
+    }
+    print("Enter lastName")
+    guard let vlastName = readLine() else { return }
+    if vlastName == "0"{
+        exitFunction()
+    }
+    
+    print("Enter gender")
+    let vgender = readLine()
+    if vgender == "0"{
+        exitFunction()
+    }
+    
+    var gender = Gender.Other
+    if vgender?.lowercased() == "male"{
+        gender = Gender.Male
+    }else if vgender?.lowercased() == "female"{
+        gender = Gender.Female
+    }else{
+        gender = Gender.Other
+    }
+    
+    print("Enter Email")
+    let vemail = enterEmail()
+    print("Enter Password")
+    let vpassword = enterPassword()
+    let vtype = UserType.Buyer
+    
+    print("Enter Bank Email Id")
+    let vbankDetail = enterEmail()
+    
+    let b = Buyer(id: vid!, firstName: vfirstName, lastName: vlastName, gender: gender, email: vemail, password: vpassword, userType: vtype, bankAccountEmail: vbankDetail)
+    
+    Users.addUsers(user: b)
+    
+    userInput()
+    
 }
 
 func userInput(){
+    
+    print("Enter the UserEmail")
+    print("Press 1 for SignIn")
+    print("Press 2 for SignUp")
+    print("or Enter 0 to Exit any where")
+    
+    let inputCode = readLine()
+    if inputCode == "0"{
+        exitFunction()
+    }
+    
+//    let inputCodeValue:String = inputCode!
+    
     if inputCode == "0"{
         exitFunction()
     }else if inputCode == "1" {
