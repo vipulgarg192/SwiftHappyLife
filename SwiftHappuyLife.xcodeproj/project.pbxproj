@@ -16,6 +16,7 @@
 		9B3D5C4622C161B800100743 /* Sellers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D5C4522C161B800100743 /* Sellers.swift */; };
 		9B3D5C4822C161D300100743 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D5C4722C161D300100743 /* Users.swift */; };
 		9B3D5C4A22C161F700100743 /* IDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D5C4922C161F700100743 /* IDisplay.swift */; };
+		9B5AB01422C167F80030061D /* IDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5AB01322C167F70030061D /* IDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,9 @@
 		9B3D5C4522C161B800100743 /* Sellers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Sellers.swift; path = ../../../../../Documents/Sellers.swift; sourceTree = "<group>"; };
 		9B3D5C4722C161D300100743 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Users.swift; path = ../../../../../Documents/Users.swift; sourceTree = "<group>"; };
 		9B3D5C4922C161F700100743 /* IDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IDisplay.swift; path = ../../../Documents/IDisplay.swift; sourceTree = "<group>"; };
+		9B3D5C4B22C1666E00100743 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = ../../../../Documents/Utility.swift; sourceTree = "<group>"; };
+		9B5AB01322C167F70030061D /* IDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IDisplay.swift; path = SwiftHappuyLife/protocols/IDisplay.swift; sourceTree = SOURCE_ROOT; };
+		9B5AB01522C1682B0030061D /* SwiftHappuyLife */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SwiftHappuyLife; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 		9B0555EA22C15FC900A217C6 = {
 			isa = PBXGroup;
 			children = (
+				9B5AB01522C1682B0030061D /* SwiftHappuyLife */,
+				9B3D5C4B22C1666E00100743 /* Utility.swift */,
 				9B0555F522C15FC900A217C6 /* SwiftHappuyLife */,
 				9B0555F422C15FC900A217C6 /* Products */,
 			);
@@ -85,6 +91,7 @@
 		9B3D5C3622C1603D00100743 /* protocols */ = {
 			isa = PBXGroup;
 			children = (
+				9B5AB01322C167F70030061D /* IDisplay.swift */,
 				9B3D5C4922C161F700100743 /* IDisplay.swift */,
 			);
 			name = protocols;
@@ -187,6 +194,7 @@
 				9B3D5C3E22C1615200100743 /* Enums.swift in Sources */,
 				9B0555F722C15FC900A217C6 /* main.swift in Sources */,
 				9B3D5C4422C161A400100743 /* Buyers.swift in Sources */,
+				9B5AB01422C167F80030061D /* IDisplay.swift in Sources */,
 				9B3D5C4A22C161F700100743 /* IDisplay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
