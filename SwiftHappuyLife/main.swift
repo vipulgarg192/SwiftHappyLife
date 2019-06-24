@@ -64,9 +64,12 @@ var buyer1 = Buyer(id: 555, firstName: "Kishore", lastName: "Narang", gender: Ge
 Users.addUsers(user : buyer1)
 
 var buyer2 = Buyer(id: 666, firstName: "Tirlok", lastName: "Bhist", gender: Gender.Male, email: "Kishore@gmail.com", password: "123123", userType: UserType.Buyer, productList: [product2], bankAccountEmail: "cibc123@gmail.com")
+
 Users.addUsers(user : buyer2)
-
-
+//
+//for item in Users.dictUsers{
+//    item.value.Display()
+//}
 
 func exitFunction(){
     return

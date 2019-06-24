@@ -47,30 +47,30 @@ class Users : IDisplay{
     }
     
     
-    init() {
-        
-        self.id = 0
-        self.firstName = ""
-        self.lastName = ""
-        self.gender = Gender.Other
-        self.email = ""
-        self.password = ""
-        self.userType = UserType.Buyer
-        self.arrayProducts = []
-        
-    }
+//    init() {
+//
+//        self.id = 0
+//        self.firstName = ""
+//        self.lastName = ""
+//        self.gender = Gender.Other
+//        self.email = ""
+//        self.password = ""
+//        self.userType = UserType.Buyer
+//        self.arrayProducts = []
+//
+//    }
     
     
     
     
     func Display() {
         
-        print("\tId: \(id)\n")
-        print("\tFullName: \(fullName)\n")
-        print("\tGender: \(gender)\n")
-        print("\tEmailId: \(email)\n")
-        print("\tPassword: \(password)\n")
-        print("\tUserType: \(userType)")
+        print("\tId: \(self.id)\n")
+        print("\tFullName: \(self.fullName)\n")
+        print("\tGender: \(self.gender)\n")
+        print("\tEmailId: \(self.email)\n")
+        print("\tPassword: \(self.password)\n")
+        print("\tUserType: \(self.userType)")
         
     }
     
