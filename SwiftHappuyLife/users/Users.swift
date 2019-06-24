@@ -18,7 +18,7 @@ class Users : IDisplay{
 
     
     init(id: Int , firstName : String , lastName : String , gender : Gender , email : String , password : String , userType : UserType , arrayProducts : [Products]?) {
-        
+  
         self.id = id
         self.firstName = firstName
         self.lastName = lastName

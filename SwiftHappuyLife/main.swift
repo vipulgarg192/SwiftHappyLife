@@ -66,10 +66,6 @@ Users.addUsers(user : buyer1)
 var buyer2 = Buyer(id: 666, firstName: "Tirlok", lastName: "Bhist", gender: Gender.Male, email: "Kishore@gmail.com", password: "123123", userType: UserType.Buyer, productList: [product2], bankAccountEmail: "cibc123@gmail.com")
 
 Users.addUsers(user : buyer2)
-//
-//for item in Users.dictUsers{
-//    item.value.Display()
-//}
 
 func exitFunction(){
     return
@@ -142,6 +138,8 @@ func getUserOptions(user : Users)  {
         }
         
         switch inputvar {
+        case "0":
+            exitFunction()
         case "1":
             for item in Users.dictUsers{
                 item.value.Display()
@@ -340,6 +338,8 @@ func getUserOptions(user : Users)  {
         }
         
         switch inputvar {
+        case "0":
+            exitFunction()
         case "1":
             for item in Products.arrayProducts{
                 item.Display()
@@ -359,6 +359,8 @@ func getUserOptions(user : Users)  {
             //                    let vid = Int(id)
             for item in Products.arrayProducts{
                 if item.productsId == id {
+                    user.arrayProducts.append(item)
+                    print("product added")
                     item.Display()
                 }
             }
@@ -379,6 +381,8 @@ func getUserOptions(user : Users)  {
         }
         
         switch inputvar {
+        case "0":
+            exitFunction()
         case "1":
             for item in Products.arrayProducts{
                 
