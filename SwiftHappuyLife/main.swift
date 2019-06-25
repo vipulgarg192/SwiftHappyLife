@@ -134,7 +134,8 @@ func getUserOptions(user : Users)  {
         print("Press 4 to get all Products")
         print("Press 5 to Add new Seller")
         print("Press 6 to Add new Buyer")
-        
+    
+
         let inputvar = readLine()
         if inputvar == "0"{
             exitFunction()
@@ -168,9 +169,10 @@ func getUserOptions(user : Users)  {
             }
             getUserOptions(user: user)
         case "4":
-            for item in Products.arrayProducts{
-                item.Display()
-            }
+//            for item in Products.arrayProducts{
+//                item.Display()
+//            }
+            Products.sortProducts()
             getUserOptions(user: user)
         case "5":
             print("Enter values to add new Seller")
