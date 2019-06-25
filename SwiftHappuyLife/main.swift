@@ -32,7 +32,6 @@ var product8 =  Products(productID: "pro8", productName: "Iphone",productType: P
 var product9 =  Products(productID: "pro9", productName: "Bag",productType: ProductType.Others )
 var product10 =  Products(productID: "pro10", productName: "Sandles",productType: ProductType.FootWare )
 
-
 Products.arrayProducts.append(product1)
 Products.arrayProducts.append(product2)
 Products.arrayProducts.append(product3)
@@ -67,6 +66,9 @@ Users.addUsers(user : buyer1)
 var buyer2 = Buyer(id: 666, firstName: "Tirlok", lastName: "Bhist", gender: Gender.Male, email: "Kishore@gmail.com", password: "123123", userType: UserType.Buyer, productList: [product2], bankAccountEmail: "cibc123@gmail.com")
 
 Users.addUsers(user : buyer2)
+
+
+//Products.sortProducts()
 
 func exitFunction(){
     return
